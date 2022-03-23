@@ -3,7 +3,7 @@
 const char* ssid     = "MinhPhu";      // Yep, that's Mập.
 const char* password = "minhphu2001";
 
-WiFiServer server(81); // Phải mở một cái (NAT) port để có thể truy cập từ mạng KHÔNG phải nội bộ, tức là dùng mạng ở đâu cũng được lun, này phải truy cập router để mở nha.
+WiFiServer server(81); // Phải mở một cái (NAT) port để có thể truy cập từ mạng KHÔNG phải nội bộ, tức là dùng mạng ở đâu cũng được lun, này phải truy cập Router để mở nha.
 
 String header;
 
@@ -14,7 +14,7 @@ const int relay1 = 5;
 const int relay2 = 4;
 
 // Xài Timer nha, Tank bảo delay ngu lắm do có trễ giữa các khâu xử lý của CPU.
-unsigned long currentTime = millis(); // Này là để check timeout, config sai hoặc nhập IP sai sẽ không vào được trang web server và một lát sau sẽ bị đá.
+unsigned long currentTime = millis(); // Này là để check timeout, config sai hoặc nhập IP sai sẽ không vào được web server và một lát sau sẽ bị đá.
 unsigned long previousTime = 0;
 const long timeoutTime = 2000;
 
@@ -33,9 +33,10 @@ void setup() {
     Serial.print(".");
   }
 
-  Serial.println("IP nè con đĩ: "); // Mỗi thiết bị kết nối với Wifi đều có IP riêng, ESP cũng vậy.
-  Serial.println(WiFi.localIP()); // Nếu không in ra bằng hàm thì có thể search thủ công bằng Advanced IP Scanner (xin cẻm ơn cụ Bùi Hà Đức vì đã recommend phần mềm này)
-
+  Serial.println("IP nè con đĩ: ");
+  Serial.println(WiFi.localIP()); // Mỗi thiết bị kết nối với Wifi đều có IP riêng, ESP cũng vậy, mà đã không in ra thì liệu mà tìm.
+  // Tìm không được chứ gì, search thủ công bằng Advanced IP Scanner (đa tạ cụ Bùi Hà Đức vì đã recommend phần mềm này).
+  
   server.begin();
 }
 
