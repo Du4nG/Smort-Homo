@@ -34,8 +34,8 @@ void setup() {
   }
 
   Serial.println("IP nè con đĩ: ");
-  Serial.println(WiFi.localIP()); // Mỗi thiết bị kết nối với Wifi đều có IP riêng, ESP cũng vậy, mà đã không in ra thì liệu mà tìm.
-  // Tìm không được chứ gì, search thủ công bằng Advanced IP Scanner (đa tạ cụ Bùi Hà Đức vì đã recommend phần mềm này).
+  Serial.println(WiFi.localIP()); // Mỗi thiết bị kết nối với Wifi đều có IP riêng, ESP cũng vậy, dùng hàm in ra luôn đỡ phải tìm.
+  // Muốn search thủ công thì dùng Advanced IP Scanner (đa tạ cụ Bùi Hà Đức vì đã recommend phần mềm này).
   
   server.begin();
 }
