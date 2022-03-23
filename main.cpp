@@ -3,7 +3,7 @@
 const char* ssid     = "MinhPhu";      // Yep, that's Mập.
 const char* password = "minhphu2001";
 
-WiFiServer server(81); // Phải mở một cái (NAT) port để có thể truy cập từ mạng KHÔNG phải nội bộ, tức là dùng mạng ở đâu cũng được lun, này phải truy cập Router để mở nha.
+WiFiServer server(81); // Phải mở một cái (NAT) port để có thể truy cập từ mạng KHÔNG phải nội bộ, tức là dùng mạng ở đâu cũng được lun, này phải truy cập router để mở nha.
 
 String header;
 
