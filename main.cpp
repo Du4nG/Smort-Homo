@@ -52,7 +52,7 @@ void loop(){ // Ảduino ft. HTML,JS | Official MV
     while (client.connected() && currentTime - previousTime <= timeoutTime) { // Check timeout
       currentTime = millis();
 
-      // Khúc này chịu @@
+      // Ủi vô nhà nè
       if (client.available()) {
         char c = client.read();
         Serial.write(c);
