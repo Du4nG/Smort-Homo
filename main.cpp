@@ -14,7 +14,7 @@ const int relay1 = 5;
 const int relay2 = 4;
 
 // Xài Timer nha, Tank bảo delay ngu lắm do có trễ giữa các khâu xử lý của CPU.
-unsigned long currentTime = millis(); // Này là để check timeout, config sai hoặc nhập IP sai sẽ không vào được web server và một lát sau sẽ bị đá.
+unsigned long currentTime = millis();
 unsigned long previousTime = 0;
 const long timeoutTime = 2000;
 
