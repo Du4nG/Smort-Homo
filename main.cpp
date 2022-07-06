@@ -28,14 +28,13 @@ void setup() {
 
   WiFi.begin(ssid, password); // Câu wifi
 
-  while (WiFi.status() != WL_CONNECTED) { // Này có hay không cũng được, nhìn cho đỡ sót ruột.
+  while (WiFi.status() != WL_CONNECTED) {
     delay(1000);
     Serial.print(".");
   }
 
   Serial.println("IP nè con đĩ: ");
-  Serial.println(WiFi.localIP()); // Mỗi thiết bị kết nối với Wifi đều có IP riêng, ESP cũng vậy, dùng hàm in ra luôn đỡ phải tìm.
-  // Muốn search thủ công thì dùng Advanced IP Scanner (đa tạ cụ Bùi Hà Đức vì đã recommend phần mềm này).
+  Serial.println(WiFi.localIP()); // Muốn search thủ công thì dùng Advanced IP Scanner như cụ Bùi Hà Đức.
   
   server.begin();
 }
@@ -49,7 +48,7 @@ void loop(){ // Ảduino ft. HTML,JS | Official MV
     currentTime = millis();
     previousTime = currentTime;
 
-    while (client.connected() && currentTime - previousTime <= timeoutTime) { // Check timeout
+    while (client.connected() && currentTime - previousTime <= timeoutTime) {
       currentTime = millis();
 
       // Ủi vô nhà nè
@@ -65,7 +64,7 @@ void loop(){ // Ảduino ft. HTML,JS | Official MV
             client.println();
 
 
-            // Nên xài ngắt nha, dùng hàm attachInterrupt(), chứ như dưới đây vừa tốn điện vừa giảm tuổi thọ mạch.
+            // Nên xài ngắt nha, dùng attachInterrupt(), chứ như dưới đây vừa tốn điện vừa giảm tuổi thọ mạch.
             if (header.indexOf("GET /5/on") >= 0) {
               light = "on";
               digitalWrite(relay1, HIGH);
