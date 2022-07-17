@@ -13,7 +13,7 @@ String fan = "off";
 const int relay1 = 5;
 const int relay2 = 4;
 
-// Xài Timer nha, Tank bảo delay ngu lắm do có trễ giữa các khâu xử lý của CPU.
+// Xài Timer nha, Tank bảo delay ngu lắm.
 unsigned long currentTime = millis();
 unsigned long previousTime = 0;
 const long timeoutTime = 2000;
