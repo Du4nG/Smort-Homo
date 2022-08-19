@@ -13,7 +13,7 @@ String fan = "off";
 const int relay1 = 5;
 const int relay2 = 4;
 
-// Xài Timer nha, Tank bảo delay ngu lắm.
+//Tank bảo delay ngu lắm.
 unsigned long currentTime = millis();
 unsigned long previousTime = 0;
 const long timeoutTime = 2000;
@@ -64,7 +64,7 @@ void loop(){ // Ảduino ft. HTML,JS | Official MV
             client.println();
 
 
-            // Nên xài ngắt nha, dùng attachInterrupt(), chứ như dưới đây vừa tốn điện vừa giảm tuổi thọ mạch.
+            // Xài ngắt pls
             if (header.indexOf("GET /5/on") >= 0) {
               light = "on";
               digitalWrite(relay1, HIGH);
